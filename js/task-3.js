@@ -17,24 +17,26 @@ removeItem(item) - получет товар и, если он есть, уда�
 // Task START
 
 
+
 class Storage {
 
-    constructor(arr){
-      this.arr = arr;
+    constructor(items){
+      this.items = items;
   }
   
   getItems() {
     
-    return this.arr;
+    return this.items;
     
   }
 
   addItem(itemName) {
-    this.arr.push(itemName);
-    return storage.items;
+    this.items.push(itemName);
+    
     
   }
-  removeItem() {
+  removeItem(itemName) {
+    this.items.splice(this.items.indexOf(itemName), 1);
    
  }
   
@@ -56,6 +58,7 @@ console.table(storage.items); // [ "Нанитоиды", "Пролонгер", "
 
 storage.removeItem('Пролонгер');
 console.table(storage.items); // [ "Нанитоиды", "Железные жупи", "Антигравитатор", "Дроид" ]
+
 
 
 
