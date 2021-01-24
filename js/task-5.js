@@ -1,15 +1,3 @@
-//=-==-=-=-=--=-=-=-=-=-=-=-=-=-===-
-console.log(" ");
-console.log("Task-5");
-console.log(" ");
-//=-=-=-==-=-=-=-=-=-=-=-==-=-=-=-=-
-
-/*
-
-*/
-
-// Task START
-
 class Car {
   /*
    * Добавь статический метод `getSpecs(car)`,
@@ -37,11 +25,11 @@ class Car {
     price,
     maxSpeed,
     isOn = false,
-    distance
+    distance = 0
   })
   {
     this.speed = speed;
-   this.price = price;
+   this._price = price;
     this.maxSpeed = maxSpeed;
     this.isOn = isOn;
     this.distance = distance;
@@ -75,6 +63,9 @@ class Car {
    */
   turnOff() {
     this.isOn = false;
+    if (this.isOn === false) {
+      this.speed = 0;
+    }
 
   }
 
@@ -87,9 +78,6 @@ class Car {
     if (this.maxSpeed >= (value + this.speed)) {
       this.speed = this.speed + value;
     } 
-
-
-
   }
 
   /*
@@ -108,7 +96,7 @@ class Car {
    */
   drive(hours) {
     if (this.isOn === true) {
-      this.distance = hours * this.speed;
+      this.distance = this.distance + hours * this.speed;
     }
   }
 }
@@ -134,11 +122,3 @@ mustang.price = 4000;
 console.log(mustang.price); // 4000
 
 
-
-
-
-
-//Task END
-
-console.log(" ");
-console.log("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
