@@ -36,10 +36,11 @@ class Storage {
     
   }
   removeItem(itemName) {
-    this.items.splice(this.items.indexOf(itemName), 1);
-   
- }
-  
+    if (this.items.includes(itemName)) {
+      this.items.splice(this.items.indexOf(itemName), 1);
+    }
+  }
+ 
 }
 
 
