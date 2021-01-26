@@ -62,11 +62,10 @@ class Car {
    * и сбрасывает текущую скорость в 0
    */
   turnOff() {
-    this.isOn = false;
-    if (this.isOn === false) {
-      this.speed = 0;
-    }
 
+    this.isOn = false;
+    this.speed = 0;
+    
   }
 
   /*
